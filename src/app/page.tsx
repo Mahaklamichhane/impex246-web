@@ -4,7 +4,6 @@ import Preloader from "@/components/preloader";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import BrandStrip from "@/components/sections/brand-strip";
-import Welcome from "@/components/sections/welcome";
 import Intro from "@/components/sections/intro";
 import Categories from "@/components/sections/categories";
 import Showcase from "@/components/sections/showcase";
@@ -25,7 +24,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <BrandStrip />
-        <Welcome />
         <Intro />
         <Categories />
         <Showcase />
