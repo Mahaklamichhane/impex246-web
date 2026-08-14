@@ -10,6 +10,7 @@ import { useRef } from "react";
 import { ShieldCheck, Truck, BadgeCheck, MousePointer2 } from "lucide-react";
 import { Spotlight } from "../ui/spotlight";
 import { SplineScene } from "../ui/splite";
+import { GuideBubble } from "../guide-bubble";
 import { CTA, Magnetic } from "../ui";
 import { CONTACT, SITE } from "@/lib/content";
 
@@ -57,7 +58,7 @@ export default function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
             </span>
             <span className="eyebrow text-ink/60">
-              Nepal · Imported Electronics
+              Meet your 246 guide
             </span>
           </motion.div>
 
@@ -156,6 +157,18 @@ export default function Hero() {
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/25 blur-[90px]" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_110%,rgba(225,27,34,0.22),transparent_60%)]" />
 
+            {/* Guide identity — makes the robot the 246 Impex assistant */}
+            <div className="pointer-events-none absolute left-4 top-4 z-20 flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="text-xs font-medium text-white/85">
+                246 Assistant · online
+              </span>
+            </div>
+            <GuideBubble className="absolute left-4 top-16 z-20" />
+
             <motion.div
               className="robot-brand absolute inset-0"
               animate={reduce ? undefined : { y: [0, -16, 0] }}
@@ -169,7 +182,7 @@ export default function Hero() {
 
             <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 text-xs text-white/45">
               <MousePointer2 className="h-3.5 w-3.5" strokeWidth={1.75} />
-              Drag the robot
+              Drag me around
             </div>
           </div>
         </motion.div>
