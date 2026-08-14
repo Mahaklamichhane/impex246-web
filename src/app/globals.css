@@ -10,34 +10,33 @@
 
 @theme {
   /* ---- Core palette ----
-     Cool, precise, navy-tinted — the world of global logistics &
-     genuine electronics, not warm cream. Both brand colors (red +
-     globe navy) do real structural work. */
-  --color-ink: #0a1020; /* deep navy-black — dark sections / text */
-  --color-ink-soft: #121a2e;
-  --color-paper: #eef1f6; /* cool off-white page base */
-  --color-paper-2: #e2e7f0; /* deeper cool paper */
-  --color-cloud: #ffffff;
+     Warm, editorial: cream & taupe neutrals with a warm charcoal for
+     type and dark panels. Brand red stays the single accent. */
+  --color-ink: #26241d; /* warm near-black — type / dark sections */
+  --color-ink-soft: #35332b;
+  --color-paper: #efeadd; /* warm cream page base */
+  --color-paper-2: #e4ddca; /* beige */
+  --color-cloud: #faf7ef; /* warm white */
 
   /* ---- Brand ---- */
   --color-brand: #e11b22; /* 246 red (primary accent) */
   --color-brand-600: #c4141b;
   --color-brand-700: #a10f16;
-  --color-globe: #163e86; /* deep globe navy (structural secondary) */
-  --color-globe-400: #3160b0;
-  --color-line: #cdd6e6; /* hairline blue-grey for coordinate rules */
+  --color-globe: #4c4636; /* warm dark taupe (secondary) */
+  --color-globe-400: #8a7f66;
+  --color-line: #d6cebb; /* warm hairline */
 
-  /* ---- Neutrals (cool gray scale) ---- */
-  --color-n-50: #f4f6fa;
-  --color-n-100: #e7ebf2;
-  --color-n-200: #d2d9e4;
-  --color-n-300: #b3bccd;
-  --color-n-400: #8b95a8;
-  --color-n-500: #626c7e;
-  --color-n-600: #454e5f;
-  --color-n-700: #2c3444;
-  --color-n-800: #1a2130;
-  --color-n-900: #0f1420;
+  /* ---- Neutrals (warm taupe scale) ---- */
+  --color-n-50: #f5f1e6;
+  --color-n-100: #e9e3d4;
+  --color-n-200: #dad2be;
+  --color-n-300: #c2b9a1;
+  --color-n-400: #9c9179;
+  --color-n-500: #6f6552;
+  --color-n-600: #4a4436;
+  --color-n-700: #332f26;
+  --color-n-800: #26231c;
+  --color-n-900: #191710;
 
   /* ---- shadcn semantic tokens (mapped to the 246 palette) ----
      Lets shadcn/ui components (e.g. components/ui/*) inherit the brand
@@ -237,6 +236,12 @@ h4 {
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* Tint the (fixed) Spline robot toward the 246 brand red */
+.robot-brand canvas {
+  filter: sepia(0.9) saturate(5.5) hue-rotate(-38deg) brightness(0.95)
+    contrast(1.12);
 }
 
 /* Spinner for lazy 3D / suspense fallbacks */

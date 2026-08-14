@@ -20,7 +20,7 @@ export default function Showcase() {
             <Reveal>
               <h2 className="display-2 text-ink">
                 Straight off the{" "}
-                <span className="accent text-globe">shelf.</span>
+                <span className="accent text-brand">shelf.</span>
               </h2>
             </Reveal>
           </div>

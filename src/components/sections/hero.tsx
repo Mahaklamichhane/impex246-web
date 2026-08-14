@@ -14,7 +14,7 @@ import { CTA, Magnetic } from "../ui";
 import { CONTACT, SITE } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-const LINES = ["Genuine imported", "electronics,", "delivered across Nepal."];
+const LINES = ["Welcome to", "246 Impex."];
 const BASE_DELAY = 1.25; // wait out the preloader
 
 const chips = [
@@ -30,41 +30,21 @@ export default function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const robotY = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 70]);
+  const robotY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const fade = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
     <section
       id="top"
       ref={ref}
-      className="grain relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-ink pt-24 pb-10 text-white md:pt-28"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-paper pt-24 pb-10 text-ink md:pt-28"
     >
-      {/* Ambient depth */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(120% 80% at 15% -10%, rgba(255,255,255,0.05), transparent 55%), radial-gradient(90% 70% at 88% 82%, rgba(225,27,34,0.18), transparent 62%), radial-gradient(70% 60% at 78% 20%, rgba(22,62,134,0.35), transparent 60%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-50"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
-          backgroundSize: "clamp(48px, 7vw, 96px) clamp(48px, 7vw, 96px)",
-          maskImage:
-            "radial-gradient(100% 100% at 30% 0%, black, transparent 70%)",
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(120%_120%_at_50%_40%,transparent_55%,rgba(0,0,0,0.5))]" />
+      {/* Soft warm ambience */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(90%_60%_at_18%_-10%,rgba(255,255,255,0.6),transparent_60%)]" />
 
-      {/* Cursor-following spotlight across the whole hero */}
-      <Spotlight className="left-0 top-0 md:left-40 md:-top-10" size={420} />
-
-      <div className="u-container relative z-10 grid items-center gap-6 lg:grid-cols-[1fr_1.05fr] lg:gap-8">
-        {/* Left — copy */}
+      <div className="u-container relative z-10 grid items-center gap-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
+        {/* Left — welcome copy */}
         <motion.div style={{ y: reduce ? 0 : contentY, opacity: reduce ? 1 : fade }}>
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -73,21 +53,21 @@ export default function Hero() {
             className="mb-6 flex items-center gap-3"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/70" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
             </span>
-            <span className="eyebrow text-white/70">
+            <span className="eyebrow text-ink/60">
               Nepal · Imported Electronics
             </span>
           </motion.div>
 
-          {/* Headline — line-by-line masked reveal */}
-          <h1 className="font-display text-[clamp(2.5rem,5.4vw,4.6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-white">
+          {/* Big welcome headline — line-by-line masked reveal */}
+          <h1 className="font-display text-[clamp(2.9rem,6.6vw,6rem)] font-semibold leading-[0.95] tracking-[-0.035em] text-ink">
             {LINES.map((line, i) => (
               <span
                 key={i}
                 className="block overflow-hidden"
-                style={{ paddingBottom: "0.06em" }}
+                style={{ paddingBottom: "0.08em" }}
               >
                 <motion.span
                   className="inline-block"
@@ -99,9 +79,9 @@ export default function Hero() {
                     delay: BASE_DELAY + 0.12 + i * 0.13,
                   }}
                 >
-                  {i === 2 ? (
+                  {i === 1 ? (
                     <>
-                      delivered across <span className="text-brand">Nepal.</span>
+                      <span className="text-brand">246</span> Impex.
                     </>
                   ) : (
                     line
@@ -114,10 +94,11 @@ export default function Hero() {
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: EASE, delay: BASE_DELAY + 0.55 }}
-            className="mt-7 max-w-[48ch] text-lg leading-relaxed text-white/70"
+            transition={{ duration: 0.8, ease: EASE, delay: BASE_DELAY + 0.5 }}
+            className="mt-7 max-w-[50ch] text-lg leading-relaxed text-ink/70"
           >
-            From smartphones to speakers — {SITE.name} brings you 100% original
+            Genuine imported electronics, delivered across Nepal. From
+            smartphones to speakers — {SITE.name} brings you 100% original
             products from the world&apos;s best brands, with official warranty,
             easy EMI and fast delivery to your door.
           </motion.p>
@@ -125,7 +106,7 @@ export default function Hero() {
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: EASE, delay: BASE_DELAY + 0.7 }}
+            transition={{ duration: 0.8, ease: EASE, delay: BASE_DELAY + 0.65 }}
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <Magnetic strength={0.3}>
@@ -137,7 +118,6 @@ export default function Hero() {
               href={`${SITE.storeUrl}/products`}
               external
               variant="outline"
-              tone="light"
             >
               Explore products
             </CTA>
@@ -146,13 +126,13 @@ export default function Hero() {
           <motion.ul
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.9, ease: EASE, delay: BASE_DELAY + 0.9 }}
+            transition={{ duration: 0.9, ease: EASE, delay: BASE_DELAY + 0.85 }}
             className="mt-10 flex flex-wrap gap-x-8 gap-y-3"
           >
             {chips.map((c) => (
               <li
                 key={c.label}
-                className="flex items-center gap-2.5 text-sm text-white/65"
+                className="flex items-center gap-2.5 text-sm text-ink/65"
               >
                 <c.icon className="h-4 w-4 text-brand" strokeWidth={1.75} />
                 {c.label}
@@ -161,31 +141,36 @@ export default function Hero() {
           </motion.ul>
         </motion.div>
 
-        {/* Right — interactive 3D robot (bigger, animated) */}
+        {/* Right — robot in a charcoal panel, tinted toward brand red */}
         <motion.div
           style={{ y: reduce ? 0 : robotY }}
-          initial={reduce ? false : { opacity: 0, scale: 0.92 }}
+          initial={reduce ? false : { opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: EASE, delay: BASE_DELAY + 0.15 }}
-          className="relative order-first h-[360px] w-full sm:h-[440px] lg:order-none lg:h-[660px]"
+          className="relative order-first h-[380px] w-full sm:h-[460px] lg:order-none lg:h-[620px]"
         >
-          {/* halo behind the robot */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/15 blur-[100px]" />
-          <motion.div
-            className="absolute inset-0"
-            animate={reduce ? undefined : { y: [0, -16, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <SplineScene
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="h-full w-full"
-            />
-          </motion.div>
+          <div className="relative h-full w-full overflow-hidden rounded-[1.75rem] border border-ink/10 bg-ink shadow-[0_30px_80px_rgba(38,36,29,0.25)]">
+            {/* cursor spotlight within the panel */}
+            <Spotlight className="left-10 -top-10 md:left-32" size={360} />
+            {/* brand halo */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/25 blur-[90px]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_110%,rgba(225,27,34,0.22),transparent_60%)]" />
 
-          {/* interaction hint */}
-          <div className="pointer-events-none absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-2 text-xs text-white/40 lg:bottom-6">
-            <MousePointer2 className="h-3.5 w-3.5" strokeWidth={1.75} />
-            Drag the robot
+            <motion.div
+              className="robot-brand absolute inset-0"
+              animate={reduce ? undefined : { y: [0, -16, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="h-full w-full"
+              />
+            </motion.div>
+
+            <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 text-xs text-white/45">
+              <MousePointer2 className="h-3.5 w-3.5" strokeWidth={1.75} />
+              Drag the robot
+            </div>
           </div>
         </motion.div>
       </div>
@@ -198,10 +183,10 @@ export default function Hero() {
         style={{ opacity: reduce ? 1 : fade }}
         className="u-container relative z-10 mt-10 hidden items-center gap-3 md:flex"
       >
-        <span className="text-xs uppercase tracking-[0.2em] text-white/40">
+        <span className="text-xs uppercase tracking-[0.2em] text-ink/40">
           Scroll
         </span>
-        <span className="h-px w-16 overflow-hidden bg-white/15">
+        <span className="h-px w-16 overflow-hidden bg-ink/15">
           <motion.span
             className="block h-full w-full bg-brand"
             animate={reduce ? undefined : { x: ["-100%", "100%"] }}

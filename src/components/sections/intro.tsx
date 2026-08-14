@@ -13,7 +13,7 @@ export default function Intro() {
         <div className="lg:col-span-7">
           <Reveal>
             <h2 className="display-2 max-w-[16ch] text-ink">
-              Owning <span className="accent text-globe">genuine</span>,
+              Owning <span className="accent text-brand">genuine</span>,
               world-class technology in Nepal should be simple.
             </h2>
           </Reveal>

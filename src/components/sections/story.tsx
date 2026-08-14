@@ -46,7 +46,7 @@ export default function Story() {
           <Reveal>
             <h2 className="display-2 max-w-[15ch] text-ink">
               The world&apos;s best tech, brought{" "}
-              <span className="accent text-globe">home.</span>
+              <span className="accent text-brand">home.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>

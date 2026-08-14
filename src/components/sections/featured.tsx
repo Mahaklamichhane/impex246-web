@@ -22,8 +22,8 @@ export default function Featured() {
       ref={ref}
       className="grain relative overflow-hidden bg-ink py-24 text-white md:py-36"
     >
-      {/* Structural navy wash — the globe blue doing real work */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(115%_90%_at_92%_8%,rgba(22,62,134,0.6),transparent_58%)]" />
+      {/* Warm brand wash */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(115%_90%_at_92%_8%,rgba(225,27,34,0.14),transparent_58%)]" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-[140px]" />
 
       <div className="u-container relative z-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
