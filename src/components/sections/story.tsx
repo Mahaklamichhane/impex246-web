@@ -6,6 +6,7 @@ import { Reveal } from "../motion-primitives";
 import { CTA } from "../ui";
 import { ProductPanel } from "../visuals";
 import { CONTACT } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export default function Story() {
   const reduce = useReducedMotion();
@@ -27,9 +28,9 @@ export default function Story() {
             className="absolute inset-0"
           >
             <ProductPanel
-              src="/media/story-redmi.webp"
+              src={asset("/media/story-redmi.webp")}
               alt="Redmi smartphone — genuine imported flagship stocked by 246 Impex"
-              inset="/media/story-watch.webp"
+              inset={asset("/media/story-watch.webp")}
               insetAlt="Apple Watch Ultra available at 246 Impex"
               caption="Sourced worldwide"
             />

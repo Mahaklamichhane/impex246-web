@@ -1,17 +1,16 @@
 import type { NextConfig } from "next";
 
+// For GitHub Pages project sites the app is served from /<repo>. Set
+// NEXT_PUBLIC_BASE_PATH=/impex246-web in that build; leave empty for
+// root deploys (local dev, custom domain, cPanel).
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
-  // Static HTML/CSS/JS export — deployable to any static host (cPanel,
-  // Netlify, GitHub Pages, S3…). Produces an `out/` folder on build.
+  // Static HTML/CSS/JS export — deployable to any static host.
   output: "export",
-
-  // Emit /path/index.html so links resolve without a server rewrite —
-  // safest for classic static/shared hosting.
   trailingSlash: true,
-
-  // No next/image is used (visuals are inline SVG/CSS), but keep this
-  // so any future <Image> still works under static export.
   images: { unoptimized: true },
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
 };
 
 export default nextConfig;

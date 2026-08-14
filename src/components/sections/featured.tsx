@@ -6,6 +6,7 @@ import { Reveal } from "../motion-primitives";
 import { CTA } from "../ui";
 import { ProductPanel } from "../visuals";
 import { CONTACT, SITE } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export default function Featured() {
   const reduce = useReducedMotion();
@@ -82,7 +83,7 @@ export default function Featured() {
               className="absolute inset-0"
             >
               <ProductPanel
-                src="/media/featured-phones.webp"
+                src={asset("/media/featured-phones.webp")}
                 alt="Genuine imported iPhone lineup available at 246 Impex"
               />
             </motion.div>

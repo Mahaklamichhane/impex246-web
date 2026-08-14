@@ -3,6 +3,9 @@ import { CTA } from "../ui";
 import { CoverflowCarousel } from "../ui/coverflow-carousel";
 import { PRODUCT_SLIDES } from "@/lib/products";
 import { SITE } from "@/lib/content";
+import { asset } from "@/lib/asset";
+
+const SLIDES = PRODUCT_SLIDES.map((s) => ({ ...s, src: asset(s.src) }));
 
 export default function Showcase() {
   return (
@@ -34,7 +37,7 @@ export default function Showcase() {
       {/* Full-bleed carousel so the neighbouring cards run to the edges */}
       <Reveal delay={0.1}>
         <CoverflowCarousel
-          slides={PRODUCT_SLIDES}
+          slides={SLIDES}
           showCaption
           showNavigation
           showPagination
