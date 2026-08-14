@@ -6,6 +6,7 @@ import Hero from "@/components/sections/hero";
 import BrandStrip from "@/components/sections/brand-strip";
 import Intro from "@/components/sections/intro";
 import Categories from "@/components/sections/categories";
+import Statement from "@/components/sections/statement";
 import Showcase from "@/components/sections/showcase";
 import Featured from "@/components/sections/featured";
 import Why from "@/components/sections/why";
@@ -26,6 +27,7 @@ export default function Home() {
         <BrandStrip />
         <Intro />
         <Categories />
+        <Statement />
         <Showcase />
         <Featured />
         <Why />

@@ -259,6 +259,22 @@ h4 {
   }
 }
 
+/* Hazard stripe — industrial red/charcoal diagonal, gently scrolling */
+.hazard {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-brand) 0 14px,
+    var(--color-ink) 14px 28px
+  );
+  background-size: 40px 40px;
+  animation: hazard-slide 1.4s linear infinite;
+}
+@keyframes hazard-slide {
+  to {
+    background-position: 40px 0;
+  }
+}
+
 /* Marquee */
 @keyframes marquee-x {
   from {

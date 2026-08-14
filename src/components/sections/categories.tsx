@@ -55,14 +55,14 @@ function CategoryRow({
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.05 }}
       className="group relative block overflow-hidden border-b border-ink/12"
     >
-      {/* Fill sweep on hover */}
+      {/* Fill sweep on hover — brand red */}
       <span
         aria-hidden
-        className="absolute inset-0 z-0 translate-y-full bg-ink transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0"
+        className="absolute inset-0 z-0 translate-y-full bg-brand transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0"
       />
 
       <div className="relative z-10 grid grid-cols-[auto_1fr_auto] items-center gap-5 py-7 md:gap-10 md:py-9">
-        <span className="font-mono text-sm text-ink/40 transition-colors duration-500 group-hover:text-brand md:text-base">
+        <span className="mono text-2xl font-bold text-ink/30 transition-colors duration-500 group-hover:text-white md:text-4xl">
           {cat.index}
         </span>
 
@@ -91,7 +91,7 @@ function CategoryRow({
           </div>
         </div>
 
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-ink/15 text-ink transition-all duration-500 group-hover:border-brand group-hover:bg-brand group-hover:text-white md:h-14 md:w-14">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-ink/15 text-ink transition-all duration-500 group-hover:border-white group-hover:bg-white group-hover:text-brand md:h-14 md:w-14">
           <ArrowUpRight
             className="h-5 w-5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             strokeWidth={1.6}
