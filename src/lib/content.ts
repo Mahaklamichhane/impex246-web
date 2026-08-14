@@ -31,8 +31,8 @@ export const CONTACT = {
 export const NAV = [
   { label: "Home", href: "#top" },
   { label: "Categories", href: "#categories" },
+  { label: "Shop", href: "#shop" },
   { label: "Why 246", href: "#why" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 

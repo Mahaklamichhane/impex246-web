@@ -4,8 +4,10 @@ import Preloader from "@/components/preloader";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import BrandStrip from "@/components/sections/brand-strip";
+import Welcome from "@/components/sections/welcome";
 import Intro from "@/components/sections/intro";
 import Categories from "@/components/sections/categories";
+import Showcase from "@/components/sections/showcase";
 import Featured from "@/components/sections/featured";
 import Why from "@/components/sections/why";
 import Trust from "@/components/sections/trust";
@@ -23,8 +25,10 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <BrandStrip />
+        <Welcome />
         <Intro />
         <Categories />
+        <Showcase />
         <Featured />
         <Why />
         <Trust />
