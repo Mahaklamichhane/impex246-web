@@ -14,6 +14,7 @@ import Trust from "@/components/sections/trust";
 import Story from "@/components/sections/story";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
+import { HazardDivider } from "@/components/hazard";
 
 export default function Home() {
   return (
@@ -30,9 +31,11 @@ export default function Home() {
         <Statement />
         <Showcase />
         <Featured />
+        <HazardDivider />
         <Why />
         <Trust />
         <Story />
+        <HazardDivider />
         <Contact />
       </main>
       <Footer />

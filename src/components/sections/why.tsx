@@ -31,12 +31,12 @@ export default function Why() {
           <ul>
             {VALUES.map((v) => (
               <StaggerItem key={v.k}>
-                <li className="group grid grid-cols-[auto_1fr] gap-6 border-b border-ink/12 py-8 md:gap-10 md:py-10">
-                  <span className="font-mono text-sm text-brand md:text-base">
+                <li className="group grid grid-cols-[auto_1fr] gap-6 border-b border-ink/12 py-8 transition-colors duration-500 hover:border-brand md:gap-10 md:py-10">
+                  <span className="mono text-2xl font-bold leading-none text-brand transition-transform duration-500 group-hover:scale-110 md:text-4xl">
                     {v.k}
                   </span>
                   <div>
-                    <h3 className="font-display text-2xl font-medium tracking-tight text-ink md:text-3xl">
+                    <h3 className="font-display text-2xl font-medium tracking-tight text-ink transition-colors duration-500 group-hover:text-brand md:text-3xl">
                       {v.title}
                     </h3>
                     <p className="mt-3 max-w-[52ch] leading-relaxed text-ink/65">

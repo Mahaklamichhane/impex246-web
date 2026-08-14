@@ -26,6 +26,14 @@ export default function Featured() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(115%_90%_at_92%_8%,rgba(225,27,34,0.14),transparent_58%)]" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-[140px]" />
 
+      {/* Oversized watermark */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -bottom-[7%] left-[-2%] z-0 select-none font-display text-[26vw] font-bold leading-none tracking-tighter text-white/[0.05]"
+      >
+        EMI
+      </span>
+
       <div className="u-container relative z-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Copy */}
         <div className="order-2 lg:order-1">

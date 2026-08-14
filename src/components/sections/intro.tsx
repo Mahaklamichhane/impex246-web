@@ -3,8 +3,14 @@ import { GlobeMotif } from "../brand";
 
 export default function Intro() {
   return (
-    <section className="u-container relative py-24 md:py-36">
-      <div className="mb-14 flex items-center gap-4">
+    <section className="u-container relative overflow-hidden py-24 md:py-36">
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-[-1%] top-4 z-0 select-none font-display text-[15vw] font-bold leading-none tracking-tighter text-ink/[0.04]"
+      >
+        246
+      </span>
+      <div className="relative z-10 mb-14 flex items-center gap-4">
         <span className="h-2 w-2 rounded-full bg-brand" />
         <span className="eyebrow text-ink/50">Who we are</span>
       </div>
