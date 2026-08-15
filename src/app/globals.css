@@ -242,6 +242,9 @@ h4 {
 .robot-brand canvas {
   filter: sepia(0.9) saturate(5.5) hue-rotate(-38deg) brightness(0.95)
     contrast(1.12);
+  /* Horizontal drag rotates the robot; vertical swipe still scrolls the
+     page, so mobile users are never trapped on the 3D panel. */
+  touch-action: pan-y;
 }
 
 /* Spinner for lazy 3D / suspense fallbacks */

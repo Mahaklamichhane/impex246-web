@@ -167,7 +167,7 @@ export default function Hero() {
                 246 Assistant · online
               </span>
             </div>
-            <GuideBubble className="absolute left-4 top-16 z-20" />
+            <GuideBubble className="absolute left-4 bottom-14 z-20 md:bottom-auto md:top-16" />
 
             <motion.div
               className="robot-brand absolute inset-0"
