@@ -6,11 +6,12 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ShieldCheck, Truck, BadgeCheck, MousePointer2 } from "lucide-react";
 import { Spotlight } from "../ui/spotlight";
 import { SplineScene } from "../ui/splite";
 import { GuideBubble } from "../guide-bubble";
+import { wireRobotArms } from "../robot-arms";
 import { CTA, Magnetic } from "../ui";
 import { CONTACT, SITE } from "@/lib/content";
 
@@ -27,6 +28,8 @@ const chips = [
 export default function Hero() {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
+  const armsCleanup = useRef<(() => void) | null>(null);
+  useEffect(() => () => armsCleanup.current?.(), []);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -177,6 +180,9 @@ export default function Hero() {
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="h-full w-full"
+                onLoad={(app) => {
+                  armsCleanup.current = wireRobotArms(app);
+                }}
               />
             </motion.div>
 
